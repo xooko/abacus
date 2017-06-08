@@ -1,4 +1,3 @@
-
 >genome-size	103147
 >intron	37527
 >tRNA	2321
