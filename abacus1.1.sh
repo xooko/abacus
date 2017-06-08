@@ -4,8 +4,12 @@
 # and the output will be printed in a file named "numbers.txt" 
 # in the same directory.
 
+# getting genome size 
+echo ">genome-size" > numbers.txt
+grep 'region' sequence.gff3 | awk '{print $5}' >> numbers.txt
+
 # getting introns
-echo ">intron" > numbers.txt
+echo ">intron" >> numbers.txt
 grep 'intron' sequence.gff3 | awk '{ print ($5-$4+1) }' | awk '{ sum += $1 } END { print sum }' >> numbers.txt
 
 # getting tRNAs
@@ -26,4 +30,4 @@ grep 'CDS' sequence.gff3 | grep -i 'ORF' | awk '{ print ($5-$4+1) }' | awk '{ su
 
 # making the output in tabular format 
 python listrip_TABv2.pyc
-sed -i '1,11 d' numbers.txt
+sed -i '1,13 d' numbers.txt
