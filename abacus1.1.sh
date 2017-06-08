@@ -30,4 +30,4 @@ grep 'CDS' sequence.gff3 | grep -i 'ORF' | awk '{ print ($5-$4+1) }' | awk '{ su
 
 # making the output in tabular format 
 python listrip_TABv2.pyc
-sed -i '1,13 d' numbers.txt
+sed -i '1,14 d' numbers.txt
